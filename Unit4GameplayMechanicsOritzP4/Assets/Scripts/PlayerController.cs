@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     private float powerupStrength = 15.0f;
 
     public float speed = 5f;
-    public float hangTime;
-    public float smashSpeed;
-    public float explosionForce;
-    public float explosionRadius;
+    public float hangTime = 15f;
+    public float smashSpeed = 50f;
+    public float explosionForce = 30f;
+    public float explosionRadius = 25f;
     public bool hasPowerup;
     public GameObject powerupIndicator;
     public PowerUpType currentPowerUp = PowerUpType.None;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             LaunchRockets();
         }
 
-        if(currentPowerUp == PowerUpType.Smash && Input.GetKeyDown(KeyCode.Q) && !smashing)
+        if(currentPowerUp == PowerUpType.Smash && Input.GetKeyDown(KeyCode.Space) &&!smashing)
         {
             smashing = true;
             StartCoroutine(Smash());
@@ -131,9 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             // apply an explostion that originates from pos
             if (enemies[i] != null)
-            {
-                enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRadius, 0.0f, ForceMode.Impulse);
-            }
+                 enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRadius, 0.0f, ForceMode.Impulse);
         }
 
         // no longer smashing :( set bool to false

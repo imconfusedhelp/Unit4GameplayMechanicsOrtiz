@@ -470,10 +470,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  hangTime: 0
-  smashSpeed: 0
-  explosionForce: 0
-  explosionRadius: 0
+  hangTime: 0.4
+  smashSpeed: 5
+  explosionForce: 30
+  explosionRadius: 5
   hasPowerup: 0
   powerupIndicator: {fileID: 2093100648}
   currentPowerUp: 0
@@ -767,63 +767,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8878a37eb67ddac4ead51890a31d6a18, type: 3}
---- !u!1001 &1446784662
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3071594836342522770, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_Name
-      value: PowerupSmash
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.13986105
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.6573634
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.495757
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261298996979223382, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
 --- !u!1 &2079772112
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,8 +803,13 @@ MonoBehaviour:
   - {fileID: 5602280822395269955, guid: e66d3a0b76a182c419110d87e0a3e8a6, type: 3}
   - {fileID: 5602280822395269955, guid: ac179c636a784c240a6525d761965773, type: 3}
   - {fileID: 3071594836342522770, guid: 1ff41e1ffc41a214883619165f7a5435, type: 3}
+  miniEnemyPrefabs:
+  - {fileID: 6130878214702813319, guid: 4a5c02e308fe3a340aedd53d94d524ad, type: 3}
+  - {fileID: 4504977728129430681, guid: 5698593e08eb29141ae119836753100a, type: 3}
+  bossPrefab: {fileID: 7905512152098771994, guid: 7a4a893ffa50a2c43b4e9c9d11ff3d98, type: 3}
   enemyCount: 0
   waveNumber: 1
+  bossRound: 3
 --- !u!4 &2079772114
 Transform:
   m_ObjectHideFlags: 0
@@ -955,4 +903,3 @@ SceneRoots:
   - {fileID: 1150013887}
   - {fileID: 2079772114}
   - {fileID: 1040703508}
-  - {fileID: 1446784662}
