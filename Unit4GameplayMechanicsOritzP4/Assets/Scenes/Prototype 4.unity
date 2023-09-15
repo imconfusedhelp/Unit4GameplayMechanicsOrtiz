@@ -469,11 +469,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448771e33f1eac049922d8daf1e7b093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 13
   hangTime: 0.4
-  smashSpeed: 5
-  explosionForce: 30
-  explosionRadius: 5
+  smashSpeed: 7
+  explosionForce: 40
+  explosionRadius: 15
   hasPowerup: 0
   powerupIndicator: {fileID: 2093100648}
   currentPowerUp: 0
