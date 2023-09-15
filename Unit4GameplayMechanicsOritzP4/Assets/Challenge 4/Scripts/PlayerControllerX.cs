@@ -12,7 +12,7 @@ public class PlayerControllerX : MonoBehaviour
     public bool hasPowerup;
     public bool isBoosted = false;
     public GameObject powerupIndicator;
-    public GameObject dustParticle;
+    public ParticleSystem dustParticle;
     public int powerUpDuration = 5;
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
@@ -32,21 +32,30 @@ public class PlayerControllerX : MonoBehaviour
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
-
+        
+        // if statement for boost
         if(Input.GetKeyDown(KeyCode.Space) && !isBoosted)
         {
+            // sets isBoosted to true
             isBoosted = true;
-            dustParticle.SetActive(true);
+            // turns on the dust particle
+            dustParticle.Play();
+            // begins the anti-spam coroutine
             StartCoroutine(SpeedBoostCD());
         }
     }
 
     IEnumerator SpeedBoostCD()
     {
+        // doubles your speed
         speed = 1000;
+        // 5 second cooldown
         yield return new WaitForSeconds(5);
+        // after 5 seconds, return speed to normal
         speed = 500;
-        dustParticle.SetActive(false);
+        // stops the dust particle
+        dustParticle.Stop();
+        // sets the isBoosted bool to false so we can pick up the powerup again
         isBoosted = false;
     }
 
